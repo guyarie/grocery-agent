@@ -1,0 +1,60 @@
+app:
+  name: "Agent Grocery v1"
+  version: "1.0.0"
+  environment: "development"
+
+search:
+  max_results_display: 5
+  max_results_fetch: 20
+
+kroger:
+  api_base_url: "https://api.kroger.com"
+  rate_limit_per_day: 10000
+  default_location_radius: 10
+  
+  # OAuth2 Configuration
+  client_id: "${KROGER_CLIENT_ID}"
+  client_secret: "${KROGER_CLIENT_SECRET}"
+  redirect_uri: "http://127.0.0.1:8000/api/kroger-mvp/kroger/auth/callback"
+  authorization_url: "https://api.kroger.com/v1/connect/oauth2/authorize"
+  token_url: "https://api.kroger.com/v1/connect/oauth2/token"
+  scope: "cart.basic:write product.compact profile.compact"
+  
+  # API Endpoints
+  products_url: "https://api.kroger.com/v1/products"
+  cart_url: "https://api.kroger.com/v1/cart/add"
+  checkout_url: "https://www.kroger.com/cart"
+  
+  # Test User Configuration
+  test_user:
+    location_id: "${KROGER_TEST_LOCATION_ID}"
+    modality: "PICKUP"
+
+openrouter:
+  api_key: "${OPENROUTER_API_KEY}"
+  model: "${OPENROUTER_MODEL}"
+  max_tokens: 2048
+  temperature: 0.1
+  timeout: 120
+
+storage:
+  receipts_path: "data/user_uploads"
+  max_file_size_mb: 10
+  allowed_extensions: [".pdf", ".png", ".jpg", ".jpeg"]
+
+agent:
+  max_receipt_items: 100
+  suggestion_confidence_threshold: 0.7
+
+ui:
+  enable_mock_data_warnings: true
+  show_configuration_limits: true
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+
+database:
+  url: "sqlite:///data/grocery.db"
+  echo: false

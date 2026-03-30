@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual Environment
+.venv/
+
+# Environment Variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database (track schema, not data)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# User uploads (keep directory structure)
+data/user_uploads/*
+!data/user_uploads/.gitkeep
+
+# User data (don't track personal grocery data)
+data/user_preferences.json
+data/memory/grocery_profile.md
+data/memory/receipts/*
+!data/memory/receipts/.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# Type checking / linting
+.mypy_cache/
+.ruff_cache/
+
+# Temp / scratch
+temp/
+
+# Kiro specs (design artifacts)
+.kiro/specs/
+

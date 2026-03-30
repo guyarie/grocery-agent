@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "agent-grocery": {
+      "command": "python",
+      "args": ["-m", "src.server"],
+      "cwd": "C:\\Users\\YOUR_USERNAME\\Documents\\coding\\grocery",
+      "env": {
+        "PYTHONPATH": "C:\\Users\\YOUR_USERNAME\\Documents\\coding\\grocery"
+      }
+    }
+  }
+}
